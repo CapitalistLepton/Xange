@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name" translatable="false">Xange</string>
+    <string name="passwordTextHint">Password</string>
+    <string name="usernameTextHint">Username</string>
+    <string name="loginButtonText">Login</string>
+    <string name="signUpButtonText">Sign Up</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
