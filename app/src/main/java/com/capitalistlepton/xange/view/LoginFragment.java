@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.capitalistlepton.xange.R;
+import com.capitalistlepton.xange.model.User;
 
 public class LoginFragment extends Fragment {
 
@@ -17,6 +18,8 @@ public class LoginFragment extends Fragment {
     private EditText mPasswordText;
     private Button  mLoginButton;
     private Button  mSignUpButton;
+
+    private User user;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +54,16 @@ public class LoginFragment extends Fragment {
     }
 
     private void login() {
-        Toast.makeText(getContext(), "Login", Toast.LENGTH_SHORT).show();
+        String username = mUsernameText.getText().toString();
+        String password = mPasswordText.getText().toString();
+
+        user = User.login(username, password);
+        if (user == null) {
+            Toast.makeText(getContext(), "Invalid username or password", Toast.LENGTH_SHORT)
+                    .show();
+        } else {
+            Toast.makeText(getContext(), "Logged in", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void signUp() {
